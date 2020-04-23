@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SwiPlCs, Version=1.1.60301.0, Culture=neutral, PublicKeyToken=03ea137181587c56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SwiPlCs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,6 +58,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +83,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manzana.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icons\manzana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icons\cereza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icons\ciruela.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icons\limon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icons\mandarina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icons\mango.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icons\naranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icons\pera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icons\platano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icons\uva.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
