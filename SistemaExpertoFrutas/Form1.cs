@@ -43,62 +43,86 @@ namespace SistemaExpertoFrutas
 
         public void adivinar()
         {
+
+            String nForma = cbForma.Text.ToString();
+            if (nForma.Equals("esfera aplanada"))
+            {
+                nForma = "'esfera aplanada'";
+            }
+            if(nForma.Equals("esfera conica"))
+            {
+                nForma = "'esfera conica'";
+            }
             String query = "es_fruta(" +
                 "FRUTA," +
-                cbForma.Text.ToString() + "," +
+                nForma + "," +
                 cbColores.Text.ToString() + "," +
                 cbPiedra.Text.ToString() + "," +
                 cbAcido.Text.ToString() + "," +
                 cbTallo.Text.ToString()+
                 ")";
 
-
+            labelFruta.Text = "";
             PlQuery consulta = new PlQuery(query);
             foreach (PlQueryVariables z in consulta.SolutionVariables)
             {
+               //MessageBox.Show(z["FRUTA"].ToString());
                 labelFruta.Text = z["FRUTA"].ToString();
+                
             }
             if (labelFruta.Text.Equals("manzana"))
             {
                 pbImagen.Image = Properties.Resources.manzana;
             }
-            if (labelFruta.Text.Equals("platano"))
+            else if (labelFruta.Text.Equals("platano"))
             {
                 pbImagen.Image = Properties.Resources.platano;
             }
-            if (labelFruta.Text.Equals("limon"))
+            else if (labelFruta.Text.Equals("limon"))
             {
                 pbImagen.Image = Properties.Resources.limon;
             }
-            if (labelFruta.Text.Equals("pera"))
+            else if (labelFruta.Text.Equals("pera"))
             {
                 pbImagen.Image = Properties.Resources.pera;
             }
-            if (labelFruta.Text.Equals("ciruela"))
+            else if (labelFruta.Text.Equals("ciruela"))
             {
                 pbImagen.Image = Properties.Resources.ciruela;
             }
-            if (labelFruta.Text.Equals("uva"))
+            else if (labelFruta.Text.Equals("uva"))
             {
                 pbImagen.Image = Properties.Resources.uva;
             }
-            if (labelFruta.Text.Equals("naranja"))
+            else if (labelFruta.Text.Equals("naranja"))
             {
                 pbImagen.Image = Properties.Resources.naranja;
             }
-            if (labelFruta.Text.Equals("mandarina"))
+            else if (labelFruta.Text.Equals("mandarina"))
             {
                 pbImagen.Image = Properties.Resources.mandarina;
             }
-            if (labelFruta.Text.Equals("mango"))
+            else if (labelFruta.Text.Equals("mango"))
             {
                 pbImagen.Image = Properties.Resources.mango;
             }
-            if (labelFruta.Text.Equals("cereza"))
+            else if (labelFruta.Text.Equals("cereza"))
             {
                 pbImagen.Image = Properties.Resources.cereza;
             }
+            else
+            {
+                pbImagen.Image = null;
+                labelFruta.Text = "Ninguna";
+                pbImagen.Refresh();
+            }
+            labelFruta.Text = labelFruta.Text.ToUpperInvariant();
             PlEngine.PlCleanup();
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
